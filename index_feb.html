@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cure Therapeutics | Therapeutic Massage & Recovery in Irving, TX</title>
+  <meta name="description" content="Cure Therapeutics provides therapeutic massage and recovery-focused wellness services in Irving, Texas, inside Texas Star Rehab & Performance Center. Services include therapeutic massage, prenatal and postnatal massage, cupping therapy, and recovery support." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#7c9a7a" />
+  <meta property="og:title" content="Cure Therapeutics | Therapeutic Massage & Recovery" />
+  <meta property="og:description" content="Therapeutic massage, cupping therapy, prenatal and postnatal massage, and recovery-focused care in Irving, Texas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #7c9a7a;
+      --accent-dark: #5f7d5d;
+      --soft: #eef4ec;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0,0,0,.05);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    img, iframe {
+      max-width: 100%;
+      display: block;
+    }
+    a { color: inherit; }
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 16px;
+      top: 16px;
+      width: auto;
+      height: auto;
+      padding: 10px 14px;
+      background: #fff;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+    header {
+      background:
+        linear-gradient(rgba(0,0,0,.52), rgba(0,0,0,.52)),
+        url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: #fff;
+      padding: 90px 0 80px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 40px;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: .95rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      margin: 0 0 12px;
+      text-shadow: 0 2px 10px rgba(0,0,0,.25);
+      line-height: 1.1;
+    }
+    .eyebrow {
+      font-size: 1.18rem;
+      font-weight: 600;
+      margin: 0 0 18px;
+    }
+    .hero p {
+      max-width: 760px;
+      font-size: 1.06rem;
+      margin: 0 0 24px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: background-color .2s ease;
+    }
+    .btn:hover,
+    .btn:focus-visible {
+      background: var(--accent-dark);
+    }
+    section {
+      padding: 64px 0;
+    }
+    .launch-bar {
+      background: var(--soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      font-size: .95rem;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin: 0 0 12px;
+      text-align: center;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 36px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+    }
+    .muted { color: var(--muted); }
+    .about {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .about-image,
+    .gallery-image,
+    .team-photo,
+    .team-hiring img {
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .about-image {
+      width: 100%;
+      min-height: 320px;
+      object-fit: cover;
+    }
+    .team-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 28px;
+      margin-top: 30px;
+      align-items: center;
+    }
+    .team-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+    .team-hiring {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .team-hiring img {
+      width: 160px;
+      opacity: .95;
+    }
+    .role {
+      font-weight: 600;
+      color: #6b7d6a;
+      margin: 0 0 10px;
+    }
+    .contact-box {
+      text-align: center;
+      background: var(--soft);
+      border-radius: 24px;
+      padding: 36px 24px;
+    }
+    .gallery-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    footer {
+      padding: 28px 0 50px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    @media (max-width: 800px) {
+      .about,
+      .team-card {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        gap: 12px;
+      }
+      .team-hiring {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MassageTherapist",
+    "name": "Cure Therapeutics",
+    "legalName": "Cure Therapeutics Clinic LLC",
+    "description": "Therapeutic massage and recovery-focused wellness services in Irving, Texas.",
+    "telephone": "+1-469-447-5793",
+    "email": "info@curetherapeutics.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3365 Regent Blvd Suite 130",
+      "addressLocality": "Irving",
+      "addressRegion": "TX",
+      "postalCode": "75063",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Irving", "Las Colinas", "DFW Area"],
+    "url": "https://krishnajjadav-code.github.io/curetherapeutics/",
+    "parentOrganization": {
+      "@type": "MedicalBusiness",
+      "name": "Texas Star Rehab & Performance Center"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <div class="logo">Cure Therapeutics</div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#team">Team</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <h1>Heal. Recover. Restore.</h1>
+        <p class="eyebrow">
+          Cure Therapeutics<br />
+          Therapeutic Massage &amp; Recovery
+        </p>
+        <p>
+          Cure Therapeutics provides professional therapeutic massage services focused on
+          muscle recovery, mobility improvement, and overall wellness. Located inside
+          Texas Star Rehab &amp; Performance Center in Irving, Texas, the practice supports
+          clients seeking relief from muscular tension, postural strain, sports-related
+          stress, and pregnancy-related discomfort.
+        </p>
+        <a class="btn" href="#booking">Book an Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="launch-bar">
+    <div class="container">
+      Cure Therapeutics is preparing to open in Irving, Texas inside Texas Star Rehab &amp; Performance Center. Appointments will begin soon.
+    </div>
+  </div>
+
+  <main id="main">
+    <section id="announcement">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Opening by Appointment</h2>
+          <p class="muted">Cure Therapeutics is preparing for launch in Irving, Texas and is accepting inquiries for upcoming appointments and clinic updates.</p>
+          <p><a class="btn" href="#booking">Request Booking Info</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Professional therapeutic massage services focused on recovery, musculoskeletal relief, and long-term wellness.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Relaxation Massage</h3>
+            <p class="muted">Gentle, soothing treatment designed to reduce stress, improve circulation, and support overall wellness.</p>
+          </article>
+          <article class="card">
+            <h3>Therapeutic Massage</h3>
+            <p class="muted">Focused work to help relieve muscle tension, support mobility, and assist with recovery from daily strain.</p>
+          </article>
+          <article class="card">
+            <h3>Hot Stone Therapy</h3>
+            <p class="muted">Warm stones combined with massage techniques to encourage deep relaxation and release built-up tension.</p>
+          </article>
+          <article class="card">
+            <h3>Vacuum Cupping Therapy</h3>
+            <p class="muted">A modern cupping technique that uses suction to help improve circulation, release muscle tension, and support recovery.</p>
+          </article>
+          <article class="card">
+            <h3>Pre-Natal Massage</h3>
+            <p class="muted">Specialized massage designed for expectant mothers to help reduce pregnancy-related discomfort and support relaxation.</p>
+          </article>
+          <article class="card">
+            <h3>Post-Natal Massage</h3>
+            <p class="muted">Therapeutic massage to support recovery after childbirth, helping relieve muscle tension and restore body balance.</p>
+          </article>
+          <article class="card">
+            <h3>Aromatherapy Add-On</h3>
+            <p class="muted">Enhance your session with calming essential oils selected to support relaxation and a more soothing experience.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about">
+        <div>
+          <h2>About Cure Therapeutics</h2>
+          <p>
+            Cure Therapeutics is a therapeutic massage practice planned for Irving, Texas. The clinic focuses on
+            professional massage therapy services, complementary wellness treatments, and recovery-focused care within a collaborative rehabilitation environment.
+          </p>
+          <p>
+            The practice is founded by a licensed massage therapist with international experience and is designed to grow within a clinical setting alongside rehabilitation professionals. The goal is to provide high-quality therapeutic services, support patient recovery, and build a growing team as the clinic develops.
+          </p>
+        </div>
+        <div>
+          <img class="about-image" src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80" alt="Calming massage and wellness environment" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <h2 class="section-title">Services &amp; Pricing</h2>
+        <p class="section-subtitle">Transparent pricing and service structure help present Cure Therapeutics as a professional and revenue-generating clinical practice.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>60-Minute Therapeutic Massage</h3>
+            <p class="muted">Focused treatment session designed to support muscle recovery, stress relief, and mobility improvement.</p>
+            <p><strong>Starting at:</strong> $95</p>
+          </article>
+          <article class="card">
+            <h3>90-Minute Therapeutic Massage</h3>
+            <p class="muted">Extended treatment session for clients needing more comprehensive therapeutic work and relaxation support.</p>
+            <p><strong>Starting at:</strong> $135</p>
+          </article>
+          <article class="card">
+            <h3>Hot Stone Therapy</h3>
+            <p class="muted">A complementary service combining massage techniques with heat therapy to reduce tension and promote deep relaxation.</p>
+            <p><strong>Starting at:</strong> $120</p>
+          </article>
+          <article class="card">
+            <h3>Vacuum Cupping Therapy</h3>
+            <p class="muted">Targeted cupping session designed to improve circulation, reduce muscle tightness, and support therapeutic recovery.</p>
+            <p><strong>Starting at:</strong> $110</p>
+          </article>
+          <article class="card">
+            <h3>Pre-Natal Massage</h3>
+            <p class="muted">Specialized massage care for expectant mothers focused on comfort, relaxation, and support for pregnancy-related tension.</p>
+            <p><strong>Starting at:</strong> $105</p>
+          </article>
+          <article class="card">
+            <h3>Post-Natal Massage</h3>
+            <p class="muted">Therapeutic massage supporting post-partum recovery, muscular relief, and restoration of overall body balance.</p>
+            <p><strong>Starting at:</strong> $105</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="collaboration">
+      <div class="container">
+        <h2 class="section-title">Clinical Collaboration</h2>
+        <p class="section-subtitle">Integrated wellness services within a rehabilitation-focused environment.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Collaborative Environment</h3>
+            <p class="muted">Cure Therapeutics operates within Texas Star Rehab &amp; Performance Center in Irving, Texas, allowing clients to access complementary services alongside physiotherapy and rehabilitation programs.</p>
+          </article>
+          <article class="card">
+            <h3>Integrated Wellness</h3>
+            <p class="muted">This collaborative environment helps support injury recovery, mobility improvement, and preventative wellness through coordinated therapeutic care.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <h2 class="section-title">Therapist Team &amp; Development</h2>
+        <p class="section-subtitle">Cure Therapeutics is building a collaborative team of licensed massage therapists to serve the Irving community.</p>
+
+        <div class="team-card">
+          <img class="team-photo" src="images/krishnakumari-jadav-therapist.jpg" alt="Krishnakumari Jadav, Founder and Lead Licensed Massage Therapist" loading="lazy" decoding="async" />
+
+          <div>
+            <h3>Krishnakumari Jadav</h3>
+            <p class="role">Founder &amp; Lead Licensed Massage Therapist</p>
+            <p>
+              Krishnakumari Jadav founded Cure Therapeutics with a vision of providing therapeutic massage services focused on recovery, muscle relief, and patient-centered wellness.
+            </p>
+            <p>
+              As Founder and Lead Therapist, she oversees treatment standards while developing a collaborative team of licensed massage therapists to support the clinic’s growth in Irving, Texas.
+            </p>
+            <p>
+              <strong>Specializing in:</strong><br />
+              Therapeutic Massage<br />
+              Prenatal &amp; Postnatal Massage<br />
+              Vacuum Cupping Therapy<br />
+              Recovery-Focused Treatments
+            </p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-hiring">
+            <img src="images/join-team.png" alt="Join our team hiring card for licensed massage therapist" loading="lazy" decoding="async" />
+          </div>
+          <div>
+            <h3>Licensed Massage Therapist</h3>
+            <p class="role">Join Our Team</p>
+            <p>
+              Cure Therapeutics plans to expand its team by hiring additional licensed massage therapists to support growing patient demand and extended appointment availability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="growth">
+      <div class="container">
+        <h2 class="section-title">Future Growth</h2>
+        <p class="section-subtitle">Building a professional therapeutic practice serving the Irving community.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Service Expansion</h3>
+            <p class="muted">As demand grows, Cure Therapeutics plans to expand treatment availability and introduce additional wellness services.</p>
+          </article>
+          <article class="card">
+            <h3>Employment Creation</h3>
+            <p class="muted">The clinic intends to hire additional licensed massage therapists and administrative staff as the business develops and patient demand increases.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="conditions">
+      <div class="container">
+        <h2 class="section-title">Conditions We Commonly Support</h2>
+        <p class="section-subtitle">Massage therapy may help support recovery, comfort, and wellness for a wide range of client needs. Services are tailored to the individual and are not a substitute for medical diagnosis or emergency care.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Stress &amp; Tension</h3>
+            <p class="muted">Support for daily stress, muscle tightness, neck and shoulder tension, and general relaxation needs.</p>
+          </article>
+          <article class="card">
+            <h3>Postural Discomfort</h3>
+            <p class="muted">Care for stiffness and discomfort related to desk work, repetitive movement, and everyday body strain.</p>
+          </article>
+          <article class="card">
+            <h3>Sports &amp; Recovery</h3>
+            <p class="muted">Therapeutic support for active individuals seeking muscle recovery, mobility improvement, and performance maintenance.</p>
+          </article>
+          <article class="card">
+            <h3>Prenatal &amp; Postnatal Support</h3>
+            <p class="muted">Comfort-focused massage care for pregnancy-related tension and post-partum recovery needs, when appropriate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="insurance">
+      <div class="container">
+        <h2 class="section-title">Billing &amp; Patient Convenience</h2>
+        <p class="section-subtitle">Structured operations designed to support patient access and clinic efficiency.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Insurance &amp; Documentation Support</h3>
+            <p class="muted">Where applicable, Cure Therapeutics intends to support patients with treatment documentation, receipts, and coordination that may be useful for reimbursement or wellness plan records, subject to provider and payer requirements.</p>
+          </article>
+          <article class="card">
+            <h3>Appointment Booking</h3>
+            <p class="muted">Online scheduling and phone-based appointment booking will be introduced to make treatment access simple and convenient for clients in Irving and surrounding areas.</p>
+            <p><strong>Booking link:</strong> Coming soon</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="container">
+        <h2 class="section-title">Book an Appointment</h2>
+        <p class="section-subtitle">Easy scheduling options will be available online and by phone as the clinic launch progresses.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Online Booking</h3>
+            <p class="muted">A booking page can be connected here using Calendly, Square Appointments, Fresha, or another online scheduler.</p>
+            <p><a class="btn" href="https://calendly.com/" target="_blank" rel="noopener noreferrer">Sample Booking Link</a></p>
+          </article>
+          <article class="card">
+            <h3>Phone Booking</h3>
+            <p class="muted">Clients may also call directly for appointment inquiries, scheduling support, and service questions.</p>
+            <p><strong>Call:</strong> (469) 447-5793</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <h2 class="section-title">Clinic Environment</h2>
+        <p class="section-subtitle">Photos from the Texas Star Rehab &amp; Performance facility where Cure Therapeutics operates.</p>
+        <div class="grid">
+          <article class="card gallery-card">
+            <img src="images/clinic-reception.JPG" alt="Texas Star Rehab reception area" loading="lazy" decoding="async" />
+            <h3>Reception Area</h3>
+            <p class="muted">Professional front desk and patient welcome area inside the clinic.</p>
+          </article>
+          <article class="card gallery-card">
+            <img src="images/rehab-gym.JPG" alt="Rehabilitation training area" loading="lazy" decoding="async" />
+            <h3>Rehabilitation Gym</h3>
+            <p class="muted">Therapeutic exercise and recovery training space used by the rehab center.</p>
+          </article>
+          <article class="card gallery-card">
+            <img src="images/therapy-equipment.jpg" alt="Therapy equipment area" loading="lazy" decoding="async" />
+            <h3>Therapy Equipment</h3>
+            <p class="muted">Modern rehabilitation equipment supporting mobility and recovery programs.</p>
+          </article>
+          <article class="card gallery-card">
+            <img src="images/training-area.jpg" alt="Training and mobility area" loading="lazy" decoding="async" />
+            <h3>Mobility &amp; Training Area</h3>
+            <p class="muted">Open training space used for functional therapy and performance work.</p>
+          </article>
+          <article class="card gallery-card">
+            <img src="images/massage-room.jpg" alt="Massage therapy treatment room" loading="lazy" decoding="async" />
+            <h3>Massage Therapy Room</h3>
+            <p class="muted">Dedicated treatment room where Cure Therapeutics massage sessions will be provided.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Helpful information for new clients and referral partners.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Do I need an appointment?</h3>
+            <p class="muted">Yes. Services are provided by appointment so that each client receives dedicated time and personalized care.</p>
+          </article>
+          <article class="card">
+            <h3>Where is the clinic located?</h3>
+            <p class="muted">Cure Therapeutics operates inside Texas Star Rehab &amp; Performance at 3365 Regent Blvd, Suite 130, Irving, Texas.</p>
+          </article>
+          <article class="card">
+            <h3>Do you offer prenatal and postnatal massage?</h3>
+            <p class="muted">Yes. These services are planned as part of the clinic’s therapeutic massage offerings, subject to client suitability and professional assessment.</p>
+          </article>
+          <article class="card">
+            <h3>Can massage support rehabilitation goals?</h3>
+            <p class="muted">Massage therapy may complement rehabilitation and wellness plans by helping reduce muscle tension, support mobility, and improve relaxation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Contact Us</h2>
+          <p class="muted">Cure Therapeutics operates inside Texas Star Rehab &amp; Performance</p>
+          <p><strong>Phone:</strong> (469) 447-5793</p>
+          <p><strong>Email:</strong> info@curetherapeutics.com</p>
+          <p><strong>Location:</strong> 3365 Regent Blvd, Suite 130, Irving, Texas 75063</p>
+          <p><a class="btn" href="https://www.google.com/maps/place/Texas+Star+Rehab+and+Performance+Center/@32.9209283,-97.0100552,15z/data=!3m1!4b1!4m6!3m5!1s0x864c29752dd65be9:0xfbbc537c7ad824b3!8m2!3d32.9209116!4d-96.9916011!16s%2Fg%2F11qm0lr_62" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></p>
+          <div style="margin-top:20px;border-radius:12px;overflow:hidden;">
+            <iframe
+              src="https://www.google.com/maps?q=Texas+Star+Rehab+and+Performance+Center,+3365+Regent+Blvd+Suite+130,+Irving,+TX+75063&output=embed"
+              width="100%"
+              height="300"
+              style="border:0;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Map to Texas Star Rehab and Performance Center">
+            </iframe>
+          </div>
+          <p><strong>Hours:</strong> By appointment</p>
+          <p><strong>Website Launch:</strong> Soft launch for clinic establishment and business development</p>
+          <p><a class="btn" href="mailto:info@curetherapeutics.com">Email Us</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Cure Therapeutics Clinic LLC<br />
+      Cure Therapeutics is a therapeutic massage practice.
+    </div>
+  </footer>
+</body>
+</html>
