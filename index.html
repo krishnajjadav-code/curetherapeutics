@@ -2,640 +2,922 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cure Therapeutics | Therapeutic Massage & Recovery in Irving, TX</title>
-  <meta name="description" content="Cure Therapeutics provides therapeutic massage and recovery-focused wellness services in Irving, Texas, inside Texas Star Rehab & Performance Center. Services include therapeutic massage, prenatal and postnatal massage, cupping therapy, and recovery support." />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#1F4D3A" />
-  <meta property="og:title" content="Cure Therapeutics | Therapeutic Massage & Recovery" />
-  <meta property="og:description" content="Therapeutic massage, cupping therapy, prenatal and postnatal massage, and recovery-focused care in Irving, Texas." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cure Therapeutics | Therapeutic Massage & Recovery – Irving, TX</title>
+  <meta name="description" content="Professional therapeutic massage services in Irving, Texas. Located inside Texas Star Rehab & Performance Center. Book your session today." />
+
+  <!-- Favicon & App Icons (place files in root alongside index.html) -->
+  <link rel="icon" type="image/png" href="images/cure_favicon.png" />
+  <link rel="apple-touch-icon" href="images/cure_icon.png" />
+  <meta property="og:image" content="images/cure_icon.png" />
+  <meta property="og:title" content="Cure Therapeutics | Irving, TX" />
+  <meta property="og:description" content="Professional therapeutic massage. Heal. Recover. Restore." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <style>
+    /* ─── BRAND PALETTE — matched from logo/icon assets ─── */
     :root {
-      --bg: #f7f4ef;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #2E7D5A;
-      --accent-dark: #1F4D3A;
-      --soft: #E8F3EC;
-      --border: #e5e7eb;
-      --shadow: 0 10px 30px rgba(0,0,0,.05);
-      --radius: 18px;
+      --forest:      #1a5c45;     /* deep badge background in logo */
+      --forest-dark: #123d2d;     /* darkest green — nav, footer */
+      --forest-mid:  #236b52;     /* hover, borders */
+      --lime:        #8dc857;     /* leaf / C accent in logo */
+      --lime-light:  #b0dc80;     /* soft lime */
+      --lime-pale:   #e9f5d6;     /* tinted bg */
+
+      --off-white:   #f7faf5;     /* page bg — slight green tint */
+      --warm-white:  #fdfefc;
+      --cream:       #f2f6ee;
+      --text:        #122b1e;
+      --text-mid:    #3d6050;
+      --text-light:  #7a9e8a;
+      --border:      rgba(26,92,69,0.13);
+
+      --gold:        #c9a96e;     /* featured card accent */
+      --radius:      6px;
+      --section-pad: 100px 0;
     }
-    * { box-sizing: border-box; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Jost', sans-serif;
+      background: var(--off-white);
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
-    img, iframe {
-      max-width: 100%;
-      display: block;
-    }
-    a { color: inherit; }
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
-    }
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-    .skip-link:focus {
-      left: 16px;
-      top: 16px;
-      width: auto;
-      height: auto;
-      padding: 10px 14px;
-      background: #fff;
-      border-radius: 10px;
-      z-index: 1000;
-    }
-    header {
-      background:
-        linear-gradient(rgba(31,77,58,.68), rgba(31,77,58,.68)),
-        url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') center/cover;
-      color: #fff;
-      padding: 90px 0 80px;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      padding-bottom: 40px;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: .5px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: .95rem;
-    }
-    .hero h1 {
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-      margin: 0 0 12px;
-      text-shadow: 0 2px 10px rgba(0,0,0,.25);
-      line-height: 1.1;
-    }
-    .eyebrow {
-      font-size: 1.18rem;
-      font-weight: 600;
-      margin: 0 0 18px;
-    }
-    .hero p {
-      max-width: 760px;
-      font-size: 1.06rem;
-      margin: 0 0 24px;
-    }
-    .btn {
+    img { max-width: 100%; display: block; }
+    a  { text-decoration: none; color: inherit; }
+
+    /* ─── UTILITY ──────────────────────────────────────────── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+    .section-label {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: background-color .2s ease;
-    }
-    .btn:hover,
-    .btn:focus-visible {
-      background: var(--accent-dark);
-    }
-    section {
-      padding: 64px 0;
-    }
-    .launch-bar {
-      background: var(--soft);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 0;
-      font-size: .95rem;
-      text-align: center;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--forest-mid); margin-bottom: 16px;
     }
     .section-title {
-      font-size: 2rem;
-      margin: 0 0 12px;
-      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--forest-dark); margin-bottom: 20px;
     }
-    .section-subtitle {
-      text-align: center;
-      color: var(--muted);
-      max-width: 760px;
-      margin: 0 auto 36px;
+    .section-body { font-size: 15px; color: var(--text-mid); max-width: 560px; line-height: 1.85; }
+    .divider { width: 48px; height: 2px; background: var(--lime); margin: 20px 0 32px; border-radius: 2px; }
+
+    /* ─── BUTTONS ──────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px; font-family: 'Jost', sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; border-radius: var(--radius);
+      cursor: pointer; transition: all .25s ease; border: 2px solid transparent;
     }
-    .grid {
+    .btn-primary  { background: var(--lime); color: var(--forest-dark); border-color: var(--lime); }
+    .btn-primary:hover  { background: var(--lime-light); border-color: var(--lime-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(141,200,87,.35); }
+    .btn-outline  { background: transparent; color: var(--forest-dark); border-color: var(--forest-dark); }
+    .btn-outline:hover  { background: var(--forest-dark); color: #fff; transform: translateY(-2px); }
+    .btn-ghost    { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.5); }
+    .btn-ghost:hover    { background: rgba(255,255,255,.2); transform: translateY(-1px); }
+    .btn-lime-outline { background: transparent; color: var(--lime); border-color: var(--lime); }
+    .btn-lime-outline:hover { background: var(--lime); color: var(--forest-dark); transform: translateY(-2px); }
+
+    /* ─── REVEAL ───────────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .32s; }
+    .reveal-delay-4 { transition-delay: .45s; }
+
+    /* ─── NAV ──────────────────────────────────────────────── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 0; transition: background .35s, box-shadow .35s, padding .35s;
+    }
+    #nav.scrolled {
+      background: rgba(247,250,245,.97); backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 var(--border); padding: 12px 0;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+    /* Logo */
+    .nav-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-logo-img {
+      height: 36px; width: auto;
+      /* SVG has its own dark-green background — show as-is on both states */
+      transition: opacity .35s;
+      border-radius: 6px;
+    }
+    /* Slightly dim on the hero overlay so it doesn't compete */
+    .nav-logo-img { opacity: 0.92; }
+    #nav.scrolled .nav-logo-img { opacity: 1; }
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 500; color: #fff;
+      transition: color .35s; letter-spacing: .3px; line-height: 1.2;
+    }
+    .nav-logo-text span {
+      display: block; font-family: 'Jost', sans-serif;
+      font-size: 10px; font-weight: 400; letter-spacing: 2px;
+      text-transform: uppercase; opacity: .7;
+    }
+    #nav.scrolled .nav-logo-text { color: var(--forest-dark); }
+
+    .nav-links { display: flex; list-style: none; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 11.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.82); transition: color .2s; }
+    #nav.scrolled .nav-links a { color: var(--text-mid); }
+    .nav-links a:hover { color: var(--lime) !important; }
+    #nav.scrolled .nav-links a:hover { color: var(--forest) !important; }
+    .nav-cta { background: var(--lime) !important; border: none !important; color: var(--forest-dark) !important; padding: 10px 22px !important; border-radius: var(--radius) !important; font-weight: 600 !important; transition: all .2s !important; }
+    .nav-cta:hover { background: var(--lime-light) !important; box-shadow: 0 4px 14px rgba(141,200,87,.4); transform: translateY(-1px); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: background .3s; }
+    #nav.scrolled .hamburger span { background: var(--forest-dark); }
+
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 199; }
+    .mobile-overlay.open { display: block; }
+    .mobile-menu {
+      position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+      background: var(--warm-white); z-index: 200; padding: 80px 40px;
+      transition: right .35s ease; box-shadow: -4px 0 30px rgba(0,0,0,.12);
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-menu ul { list-style: none; }
+    .mobile-menu li { margin-bottom: 28px; }
+    .mobile-menu a { font-size: 15px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--forest-dark); }
+    .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--forest-dark); }
+    .mobile-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; }
+    .mobile-logo img { height: 34px; }
+    .mobile-logo span { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 500; color: var(--forest-dark); }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(115deg, rgba(18,61,45,.88) 0%, rgba(26,92,69,.68) 55%, rgba(18,61,45,.3) 100%);
+    }
+    .hero-overlay::after {
+      content: ''; position: absolute; bottom: -20%; right: -10%;
+      width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(141,200,87,.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 640px; padding-top: 100px; }
+    .hero-logomark { height: 60px; margin-bottom: 22px; filter: brightness(0) invert(1) opacity(.92); }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(141,200,87,.14); border: 1px solid rgba(141,200,87,.32);
+      padding: 8px 18px; border-radius: 40px; margin-bottom: 24px;
+      font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--lime-light);
+    }
+    .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--lime); border-radius: 50%; animation: pulse 2.2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.35;transform:scale(1.5)} }
+    .hero-subtitle { font-size: 12px; font-weight: 500; letter-spacing: 3.5px; text-transform: uppercase; color: var(--lime-light); margin-bottom: 20px; opacity: .85; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem,6.5vw,5.5rem); font-weight: 300; line-height: 1.1; color: #fff; margin-bottom: 8px; }
+    .hero-title em { font-style: italic; color: var(--lime); }
+    .hero-desc { font-size: 15.5px; color: rgba(255,255,255,.74); line-height: 1.9; margin-bottom: 40px; max-width: 500px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.4); font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase;
+    }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, rgba(141,200,87,.65)); animation: scrollLine 1.9s ease infinite; }
+    @keyframes scrollLine { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+    /* ─── ANNOUNCE ─────────────────────────────────────────── */
+    .announce-bar { background: var(--forest-dark); padding: 13px 0; text-align: center; }
+    .announce-bar p { font-size: 12.5px; color: rgba(255,255,255,.8); }
+    .announce-bar strong { color: var(--lime); font-weight: 600; }
+
+    /* ─── STATS ────────────────────────────────────────────── */
+    .stats-row { background: var(--forest); padding: 52px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat-item { text-align: center; padding: 20px 16px; border-right: 1px solid rgba(255,255,255,.12); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 300; color: var(--lime); line-height: 1; display: block; }
+    .stat-label { font-size: 10.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: 8px; display: block; }
+
+    /* ─── SERVICES ─────────────────────────────────────────── */
+    #services { padding: var(--section-pad); }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; gap: 40px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .service-card { background: var(--cream); padding: 40px 36px; position: relative; overflow: hidden; transition: background .25s, transform .25s, box-shadow .25s; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; width: 0; background: var(--lime); transition: width .4s ease; }
+    .service-card:hover::after { width: 100%; }
+    .service-card:hover { background: #fff; transform: translateY(-5px); box-shadow: 0 16px 40px rgba(26,92,69,.1); z-index: 1; }
+    .service-icon { width: 46px; height: 46px; border-radius: 50%; background: var(--lime-pale); border: 1px solid var(--lime-light); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 20px; }
+    .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--forest-dark); margin-bottom: 10px; line-height: 1.3; }
+    .service-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.82; }
+
+    /* ─── ABOUT ────────────────────────────────────────────── */
+    #about { padding: var(--section-pad); background: var(--cream); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img-main { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); }
+    .about-img-accent { position: absolute; bottom: -28px; right: -28px; width: 50%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border: 6px solid var(--cream); }
+    .about-badge { position: absolute; top: 28px; left: -20px; background: var(--forest); color: #fff; padding: 16px 20px; border-radius: var(--radius); text-align: center; box-shadow: 0 8px 24px rgba(26,92,69,.3); }
+    .about-badge .ab-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--lime); line-height: 1; display: block; }
+    .about-badge .ab-text { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.55); }
+    .about-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .pill { padding: 7px 16px; border: 1px solid var(--lime-light); border-radius: 40px; font-size: 12px; font-weight: 500; color: var(--forest); background: var(--lime-pale); }
+
+    /* ─── PRICING ──────────────────────────────────────────── */
+    #pricing { padding: var(--section-pad); }
+    .pricing-header { text-align: center; margin-bottom: 60px; }
+    .pricing-header .divider { margin: 20px auto; }
+    .pricing-header .section-body { margin: 0 auto; text-align: center; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .price-card { border: 1.5px solid var(--border); border-radius: var(--radius); padding: 36px 32px; position: relative; background: #fff; transition: border-color .2s, box-shadow .2s, transform .2s; }
+    .price-card:hover { border-color: var(--lime-light); box-shadow: 0 12px 40px rgba(26,92,69,.1); transform: translateY(-5px); }
+    .price-card.featured { background: var(--forest); border-color: var(--forest); }
+    .featured-tag { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--lime); color: var(--forest-dark); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 40px; white-space: nowrap; }
+    .price-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--forest-dark); margin-bottom: 6px; }
+    .price-card.featured .price-name { color: var(--lime); }
+    .price-duration { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 28px; }
+    .price-card.featured .price-duration { color: rgba(255,255,255,.45); }
+    .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 300; color: var(--forest); line-height: 1; margin-bottom: 4px; }
+    .price-amount sup { font-size: 1.2rem; vertical-align: super; }
+    .price-card.featured .price-amount { color: #fff; }
+    .price-from { font-size: 11px; color: var(--text-light); margin-bottom: 24px; }
+    .price-card.featured .price-from { color: rgba(255,255,255,.4); }
+    .price-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.75; padding-top: 20px; border-top: 1px solid var(--border); }
+    .price-card.featured .price-desc { color: rgba(255,255,255,.65); border-top-color: rgba(255,255,255,.12); }
+
+    /* ─── TEAM ─────────────────────────────────────────────── */
+    #team { padding: var(--section-pad); background: var(--cream); }
+
+    /* Row 1: full-portrait photo left + bio right */
+    .team-profile {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
+      grid-template-columns: 320px 1fr;
+      gap: 0;
+      align-items: stretch;
+      margin-top: 48px;
+      background: #fff;
       border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
+      overflow: hidden;
+      box-shadow: 0 4px 28px rgba(26,92,69,.09);
     }
-    .card h3 {
-      margin: 0 0 10px;
-    }
-    .muted { color: var(--muted); }
-    .about {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 28px;
-      align-items: center;
-    }
-    .about-image,
-    .gallery-image,
-    .team-photo,
-    .team-hiring img {
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-    }
-    .about-image {
-      width: 100%;
-      min-height: 320px;
+    .team-photo-wrap { position: relative; overflow: hidden; }
+    .team-photo-wrap img {
+      width: 100%; height: 100%;
       object-fit: cover;
+      object-position: center 8%;
+      display: block;
+      min-height: 420px;
     }
-    .team-card {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 28px;
-      margin-top: 30px;
-      align-items: center;
-    }
-    .team-photo {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-    }
-    .team-hiring {
+    .team-profile-body {
+      padding: 44px 48px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      border-left: 1px solid var(--border);
     }
-    .team-hiring img {
-      width: 160px;
-      opacity: .95;
+    .team-role { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--forest); margin-bottom: 8px; }
+    .team-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 500; color: var(--forest-dark); margin-bottom: 4px; }
+    .team-bio { font-size: 14px; color: var(--text-mid); line-height: 1.85; margin-bottom: 28px; margin-top: 16px; }
+    .team-specs { display: flex; flex-direction: column; gap: 10px; }
+    .spec-item { display: flex; align-items: center; gap: 12px; font-size: 13.5px; color: var(--text-mid); }
+    .spec-dot { width: 7px; height: 7px; background: var(--lime); border-radius: 50%; flex-shrink: 0; }
+
+    /* Row 2: join card + collab card side by side */
+    .team-cards-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
     }
-    .role {
-      font-weight: 600;
-      color: #6b7d6a;
-      margin: 0 0 10px;
+    .join-card {
+      background: var(--forest-dark);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
-    .contact-box {
-      text-align: center;
-      background: var(--soft);
-      border-radius: 24px;
-      padding: 36px 24px;
+    .join-card-header { display: flex; align-items: center; gap: 18px; }
+    .join-card-thumb {
+      width: 68px; height: 68px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid rgba(141,200,87,.3);
     }
-    .gallery-card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+    .join-card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .join-card .section-label { color: var(--lime); margin-bottom: 0; }
+    .join-card .join-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem; font-weight: 400;
+      color: #fff; line-height: 1.2;
+      margin-top: 4px;
     }
-    footer {
-      padding: 28px 0 50px;
-      text-align: center;
-      color: var(--muted);
-      font-size: .95rem;
+    .join-card p { color: rgba(255,255,255,.65); font-size: 14px; line-height: 1.85; }
+    .collab-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    @media (max-width: 800px) {
-      .about,
-      .team-card {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        gap: 12px;
-      }
-      .team-hiring {
-        justify-content: flex-start;
-      }
+    .collab-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--forest-dark); margin: 4px 0 8px; }
+    .collab-card p { font-size: 13.5px; color: var(--text-mid); line-height: 1.85; }
+
+    /* ─── CONDITIONS ───────────────────────────────────────── */
+    #conditions { padding: var(--section-pad); }
+    .conditions-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+    .conditions-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; }
+    .condition-card { background: var(--cream); padding: 36px 40px; transition: background .2s; }
+    .condition-card:hover { background: #fff; }
+    .condition-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--lime-light); margin-bottom: 10px; line-height: 1; }
+    .condition-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--forest-dark); margin-bottom: 10px; }
+    .condition-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.8; }
+
+    /* ─── GALLERY ──────────────────────────────────────────── */
+    #clinic { padding: var(--section-pad); background: var(--cream); }
+    .clinic-header { text-align: center; margin-bottom: 48px; }
+    .clinic-header .divider { margin: 20px auto; }
+    .clinic-header .section-body { margin: 0 auto; }
+    .clinic-gallery { display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: 280px 280px; gap: 4px; }
+    .gallery-item { overflow: hidden; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-caption { text-align: center; margin-top: 18px; font-size: 11.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); }
+
+    /* ─── FAQ ──────────────────────────────────────────────── */
+    #faq { padding: var(--section-pad); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 16px; padding: 20px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--forest-dark); transition: color .2s; }
+    .faq-q:hover { color: var(--forest); }
+    .faq-icon { width: 26px; height: 26px; border: 1.5px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 15px; color: var(--text-light); transition: transform .25s, background .25s, border-color .25s, color .25s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--lime); border-color: var(--lime); color: var(--forest-dark); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .4s; font-size: 14px; color: var(--text-mid); line-height: 1.85; }
+    .faq-item.open .faq-a { max-height: 220px; padding-bottom: 18px; }
+
+    /* ─── BOOKING ──────────────────────────────────────────── */
+    #booking { padding: var(--section-pad); background: var(--forest-dark); position: relative; overflow: hidden; }
+    #booking::before { content: ''; position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1562088287-bde35a1ea917?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; opacity: .05; }
+    #booking::after { content: ''; position: absolute; top: -20%; right: -5%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(141,200,87,.09) 0%, transparent 65%); pointer-events: none; }
+    .booking-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .booking-text .section-title { color: #fff; }
+    .booking-text .section-label { color: var(--lime); }
+    .booking-text .section-body { color: rgba(255,255,255,.65); }
+    .booking-text .divider { background: rgba(141,200,87,.45); }
+    .booking-card { background: rgba(255,255,255,.05); border: 1px solid rgba(141,200,87,.2); border-radius: var(--radius); padding: 40px; backdrop-filter: blur(12px); }
+    .booking-option { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .booking-option:last-child { border-bottom: none; }
+    .booking-option-icon { width: 44px; height: 44px; background: rgba(141,200,87,.12); border: 1px solid rgba(141,200,87,.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .booking-option-label { font-size: 10.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--lime-light); margin-bottom: 6px; }
+    .booking-option-value { font-size: 15px; color: #fff; }
+    .booking-option-value a { color: var(--lime); }
+    .booking-option-value a:hover { text-decoration: underline; }
+
+    /* ─── CONTACT ──────────────────────────────────────────── */
+    #contact { padding: var(--section-pad); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 28px; margin-top: 8px; }
+    .contact-item { display: flex; gap: 20px; align-items: flex-start; }
+    .contact-icon { width: 44px; height: 44px; background: var(--lime-pale); border: 1px solid var(--lime-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .contact-label { font-size: 10.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--forest); margin-bottom: 5px; }
+    .contact-val { font-size: 14.5px; color: var(--text-mid); line-height: 1.65; }
+    .contact-val a { color: var(--forest); }
+    .contact-val a:hover { color: var(--lime); }
+    .contact-map { border-radius: var(--radius); overflow: hidden; box-shadow: 0 8px 32px rgba(26,92,69,.12); }
+    .contact-map iframe { width: 100%; height: 380px; border: none; display: block; }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer { background: var(--forest-dark); padding: 52px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-brand img { height: 32px; }
+    .footer-brand-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: #fff; line-height: 1.2; }
+    .footer-brand-text small { display: block; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.38); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 11px; color: rgba(255,255,255,.42); letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+    .footer-links a:hover { color: var(--lime); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.32); }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────── */
+    /* Tablets: hide some nav links earlier */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .pricing-grid  { grid-template-columns: repeat(2,1fr); }
+      .stats-grid    { grid-template-columns: repeat(2,1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3), .stat-item:last-child { border-top: 1px solid rgba(255,255,255,.12); }
+      .booking-inner { grid-template-columns: 1fr; gap: 48px; }
+      .conditions-layout { grid-template-columns: 1fr; gap: 48px; }
+      .team-profile { grid-template-columns: 280px 1fr; }
+    }
+    /* Nav: hide all links, show hamburger, at 900px to avoid overlap */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger  { display: flex; }
+      .nav-logo-text span { display: none; }   /* hide subtitle on tablet */
+    }
+    @media (max-width: 768px) {
+      :root { --section-pad: 70px 0; }
+      .services-header { flex-direction: column; align-items: flex-start; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 52px; }
+      .about-img-accent { right: 0; }
+      .pricing-grid  { grid-template-columns: 1fr; }
+      /* Team: stack photo above bio */
+      .team-profile  { grid-template-columns: 1fr; }
+      .team-photo-wrap img { min-height: 320px; object-position: center 15%; }
+      .team-profile-body { padding: 32px; border-left: none; border-top: 1px solid var(--border); }
+      .team-cards-row { grid-template-columns: 1fr; }
+      .conditions-grid { grid-template-columns: 1fr; }
+      .clinic-gallery { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; }
+      .gallery-item.tall { grid-row: span 1; }
+      .faq-grid      { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid  { grid-template-columns: 1fr; gap: 48px; }
+      .footer-inner  { flex-direction: column; align-items: flex-start; }
+      .hero-actions  { flex-direction: column; }
+      .hero-content  { padding-top: 80px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .clinic-gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
+      /* Prevent logo text wrapping on very small screens */
+      .nav-logo-text { font-size: 15px; }
+      .nav-logo-img  { height: 30px; }
+      .hero-content  { padding-top: 70px; }
     }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MassageTherapist",
-    "name": "Cure Therapeutics",
-    "legalName": "Cure Therapeutics Clinic LLC",
-    "description": "Therapeutic massage and recovery-focused wellness services in Irving, Texas.",
-    "telephone": "+1-469-447-5793",
-    "email": "info@curetherapeutics.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3365 Regent Blvd Suite 130",
-      "addressLocality": "Irving",
-      "addressRegion": "TX",
-      "postalCode": "75063",
-      "addressCountry": "US"
-    },
-    "areaServed": ["Irving", "Las Colinas", "DFW Area"],
-    "url": "https://krishnajjadav-code.github.io/curetherapeutics/",
-    "parentOrganization": {
-      "@type": "MedicalBusiness",
-      "name": "Texas Star Rehab & Performance Center"
-    }
-  }
-  </script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
 
-  <header>
-    <div class="container">
-      <nav aria-label="Primary">
-        <div class="logo">Cure Therapeutics</div>
-        <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#team">Team</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-
-      <div class="hero">
-        <h1>Heal. Recover. Restore.</h1>
-        <p class="eyebrow">
-          Cure Therapeutics<br />
-          Therapeutic Massage &amp; Recovery
-        </p>
-        <p>
-          Cure Therapeutics provides professional therapeutic massage services focused on
-          muscle recovery, mobility improvement, and overall wellness. Located inside
-          Texas Star Rehab &amp; Performance Center in Irving, Texas, the practice supports
-          clients seeking relief from muscular tension, postural strain, sports-related
-          stress, and pregnancy-related discomfort.
-        </p>
-        <a class="btn" href="#booking">Book an Appointment</a>
+<!-- ── NAV ───────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <img class="nav-logo-img" src="./cure.svg" alt="Cure Therapeutics logo" />
+      <div class="nav-logo-text">
+        Cure Therapeutics
+        <span>Massage &amp; Recovery</span>
       </div>
-    </div>
-  </header>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#booking" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <div class="launch-bar">
-    <div class="container">
-      Cure Therapeutics is preparing to open in Irving, Texas inside Texas Star Rehab &amp; Performance Center. Appointments will begin soon.
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close">✕</button>
+  <div class="mobile-logo">
+    <img src="./cure.svg" alt="Cure Therapeutics" />
+    <span>Cure Therapeutics</span>
+  </div>
+  <ul>
+    <li><a href="#services" class="mobile-link">Services</a></li>
+    <li><a href="#about"    class="mobile-link">About</a></li>
+    <li><a href="#team"     class="mobile-link">Team</a></li>
+    <li><a href="#pricing"  class="mobile-link">Pricing</a></li>
+    <li><a href="#faq"      class="mobile-link">FAQ</a></li>
+    <li><a href="#contact"  class="mobile-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <!--img class="hero-logomark" src="./cure.svg" alt="Cure Therapeutics" /-->
+      <div class="hero-badge">Opening Soon · Irving, Texas</div>
+      <p class="hero-subtitle">Therapeutic Massage &amp; Recovery</p>
+      <h1 class="hero-title">Heal.<br><em>Recover.</em><br>Restore.</h1>
+      <p class="hero-desc">Professional therapeutic massage focused on muscle recovery, mobility, and lasting wellness — inside Texas Star Rehab &amp; Performance Center, Irving, TX.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-primary">Book an Appointment</a>
+        <a href="#services" class="btn btn-ghost">Explore Services</a>
+      </div>
     </div>
   </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span></span></div>
+</section>
 
-  <main id="main">
-    <section id="announcement">
-      <div class="container">
-        <div class="contact-box">
-          <h2>Opening by Appointment</h2>
-          <p class="muted">Cure Therapeutics is preparing for launch in Irving, Texas and is accepting inquiries for upcoming appointments and clinic updates.</p>
-          <p><a class="btn" href="#booking">Request Booking Info</a></p>
-        </div>
-      </div>
-    </section>
+<!-- ── ANNOUNCE ───────────────────────────────────────────── -->
+<div class="announce-bar">
+  <div class="container">
+    <p>🌿 <strong>Now Accepting Inquiries</strong> — Cure Therapeutics is preparing to open in Irving, Texas. Call <strong>(469) 447-5793</strong> to get on the list.</p>
+  </div>
+</div>
 
-    <section id="services">
-      <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Professional therapeutic massage services focused on recovery, musculoskeletal relief, and long-term wellness.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Relaxation Massage</h3>
-            <p class="muted">Gentle, soothing treatment designed to reduce stress, improve circulation, and support overall wellness.</p>
-          </article>
-          <article class="card">
-            <h3>Therapeutic Massage</h3>
-            <p class="muted">Focused work to help relieve muscle tension, support mobility, and assist with recovery from daily strain.</p>
-          </article>
-          <article class="card">
-            <h3>Hot Stone Therapy</h3>
-            <p class="muted">Warm stones combined with massage techniques to encourage deep relaxation and release built-up tension.</p>
-          </article>
-          <article class="card">
-            <h3>Vacuum Cupping Therapy</h3>
-            <p class="muted">A modern cupping technique that uses suction to help improve circulation, release muscle tension, and support recovery.</p>
-          </article>
-          <article class="card">
-            <h3>Pre-Natal Massage</h3>
-            <p class="muted">Specialized massage designed for expectant mothers to help reduce pregnancy-related discomfort and support relaxation.</p>
-          </article>
-          <article class="card">
-            <h3>Post-Natal Massage</h3>
-            <p class="muted">Therapeutic massage to support recovery after childbirth, helping relieve muscle tension and restore body balance.</p>
-          </article>
-          <article class="card">
-            <h3>Aromatherapy Add-On</h3>
-            <p class="muted">Enhance your session with calming essential oils selected to support relaxation and a more soothing experience.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container about">
-        <div>
-          <h2>About Cure Therapeutics</h2>
-          <p>
-            Cure Therapeutics is a therapeutic massage practice planned for Irving, Texas. The clinic focuses on
-            professional massage therapy services, complementary wellness treatments, and recovery-focused care within a collaborative rehabilitation environment.
-          </p>
-          <p>
-            The practice is founded by a licensed massage therapist with international experience and is designed to grow within a clinical setting alongside rehabilitation professionals. The goal is to provide high-quality therapeutic services, support patient recovery, and build a growing team as the clinic develops.
-          </p>
-        </div>
-        <div>
-          <img class="about-image" src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80" alt="Calming massage and wellness environment" loading="lazy" decoding="async" />
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <h2 class="section-title">Services &amp; Pricing</h2>
-        <p class="section-subtitle">Transparent pricing and service structure help present Cure Therapeutics as a professional and revenue-generating clinical practice.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>60-Minute Therapeutic Massage</h3>
-            <p class="muted">Focused treatment session designed to support muscle recovery, stress relief, and mobility improvement.</p>
-            <p><strong>Starting at:</strong> $95</p>
-          </article>
-          <article class="card">
-            <h3>90-Minute Therapeutic Massage</h3>
-            <p class="muted">Extended treatment session for clients needing more comprehensive therapeutic work and relaxation support.</p>
-            <p><strong>Starting at:</strong> $135</p>
-          </article>
-          <article class="card">
-            <h3>Hot Stone Therapy</h3>
-            <p class="muted">A complementary service combining massage techniques with heat therapy to reduce tension and promote deep relaxation.</p>
-            <p><strong>Starting at:</strong> $120</p>
-          </article>
-          <article class="card">
-            <h3>Vacuum Cupping Therapy</h3>
-            <p class="muted">Targeted cupping session designed to improve circulation, reduce muscle tightness, and support therapeutic recovery.</p>
-            <p><strong>Starting at:</strong> $110</p>
-          </article>
-          <article class="card">
-            <h3>Pre-Natal Massage</h3>
-            <p class="muted">Specialized massage care for expectant mothers focused on comfort, relaxation, and support for pregnancy-related tension.</p>
-            <p><strong>Starting at:</strong> $105</p>
-          </article>
-          <article class="card">
-            <h3>Post-Natal Massage</h3>
-            <p class="muted">Therapeutic massage supporting post-partum recovery, muscular relief, and restoration of overall body balance.</p>
-            <p><strong>Starting at:</strong> $105</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="collaboration">
-      <div class="container">
-        <h2 class="section-title">Clinical Collaboration</h2>
-        <p class="section-subtitle">Integrated wellness services within a rehabilitation-focused environment.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Collaborative Environment</h3>
-            <p class="muted">Cure Therapeutics operates within Texas Star Rehab &amp; Performance Center in Irving, Texas, allowing clients to access complementary services alongside physiotherapy and rehabilitation programs.</p>
-          </article>
-          <article class="card">
-            <h3>Integrated Wellness</h3>
-            <p class="muted">This collaborative environment helps support injury recovery, mobility improvement, and preventative wellness through coordinated therapeutic care.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="team">
-      <div class="container">
-        <h2 class="section-title">Therapist Team &amp; Development</h2>
-        <p class="section-subtitle">Cure Therapeutics is building a collaborative team of licensed massage therapists to serve the Irving community.</p>
-
-        <div class="team-card">
-          <img class="team-photo" src="images/krishnakumari-jadav-therapist.jpg" alt="Krishnakumari Jadav, Founder and Lead Licensed Massage Therapist" loading="lazy" decoding="async" />
-
-          <div>
-            <h3>Krishnakumari Jadav</h3>
-            <p class="role">Founder &amp; Lead Licensed Massage Therapist</p>
-            <p>
-              Krishnakumari Jadav founded Cure Therapeutics with a vision of providing therapeutic massage services focused on recovery, muscle relief, and patient-centered wellness.
-            </p>
-            <p>
-              As Founder and Lead Therapist, she oversees treatment standards while developing a collaborative team of licensed massage therapists to support the clinic’s growth in Irving, Texas.
-            </p>
-            <p>
-              <strong>Specializing in:</strong><br />
-              Therapeutic Massage<br />
-              Prenatal &amp; Postnatal Massage<br />
-              Vacuum Cupping Therapy<br />
-              Recovery-Focused Treatments
-            </p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-hiring">
-            <img src="images/join-team.png" alt="Join our team hiring card for licensed massage therapist" loading="lazy" decoding="async" />
-          </div>
-          <div>
-            <h3>Licensed Massage Therapist</h3>
-            <p class="role">Join Our Team</p>
-            <p>
-              Cure Therapeutics plans to expand its team by hiring additional licensed massage therapists to support growing patient demand and extended appointment availability.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="growth">
-      <div class="container">
-        <h2 class="section-title">Future Growth</h2>
-        <p class="section-subtitle">Building a professional therapeutic practice serving the Irving community.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Service Expansion</h3>
-            <p class="muted">As demand grows, Cure Therapeutics plans to expand treatment availability and introduce additional wellness services.</p>
-          </article>
-          <article class="card">
-            <h3>Employment Creation</h3>
-            <p class="muted">The clinic intends to hire additional licensed massage therapists and administrative staff as the business develops and patient demand increases.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="conditions">
-      <div class="container">
-        <h2 class="section-title">Conditions We Commonly Support</h2>
-        <p class="section-subtitle">Massage therapy may help support recovery, comfort, and wellness for a wide range of client needs. Services are tailored to the individual and are not a substitute for medical diagnosis or emergency care.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Stress &amp; Tension</h3>
-            <p class="muted">Support for daily stress, muscle tightness, neck and shoulder tension, and general relaxation needs.</p>
-          </article>
-          <article class="card">
-            <h3>Postural Discomfort</h3>
-            <p class="muted">Care for stiffness and discomfort related to desk work, repetitive movement, and everyday body strain.</p>
-          </article>
-          <article class="card">
-            <h3>Sports &amp; Recovery</h3>
-            <p class="muted">Therapeutic support for active individuals seeking muscle recovery, mobility improvement, and performance maintenance.</p>
-          </article>
-          <article class="card">
-            <h3>Prenatal &amp; Postnatal Support</h3>
-            <p class="muted">Comfort-focused massage care for pregnancy-related tension and post-partum recovery needs, when appropriate.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="insurance">
-      <div class="container">
-        <h2 class="section-title">Billing &amp; Patient Convenience</h2>
-        <p class="section-subtitle">Structured operations designed to support patient access and clinic efficiency.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Insurance &amp; Documentation Support</h3>
-            <p class="muted">Where applicable, Cure Therapeutics intends to support patients with treatment documentation, receipts, and coordination that may be useful for reimbursement or wellness plan records, subject to provider and payer requirements.</p>
-          </article>
-          <article class="card">
-            <h3>Appointment Booking</h3>
-            <p class="muted">Online scheduling and phone-based appointment booking will be introduced to make treatment access simple and convenient for clients in Irving and surrounding areas.</p>
-            <p><strong>Booking link:</strong> Coming soon</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="booking">
-      <div class="container">
-        <h2 class="section-title">Book an Appointment</h2>
-        <p class="section-subtitle">Easy scheduling options will be available online and by phone as the clinic launch progresses.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Online Booking</h3>
-            <p class="muted">A booking page can be connected here using Calendly, Square Appointments, Fresha, or another online scheduler.</p>
-            <p><a class="btn" href="https://calendly.com/" target="_blank" rel="noopener noreferrer">Sample Booking Link</a></p>
-          </article>
-          <article class="card">
-            <h3>Phone Booking</h3>
-            <p class="muted">Clients may also call directly for appointment inquiries, scheduling support, and service questions.</p>
-            <p><strong>Call:</strong> (469) 447-5793</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="container">
-        <h2 class="section-title">Clinic Environment</h2>
-        <p class="section-subtitle">Photos from the Texas Star Rehab &amp; Performance facility where Cure Therapeutics operates.</p>
-        <div class="grid">
-          <article class="card gallery-card">
-            <img src="images/clinic-reception.JPG" alt="Texas Star Rehab reception area" loading="lazy" decoding="async" />
-            <h3>Reception Area</h3>
-            <p class="muted">Professional front desk and patient welcome area inside the clinic.</p>
-          </article>
-          <article class="card gallery-card">
-            <img src="images/rehab-gym.JPG" alt="Rehabilitation training area" loading="lazy" decoding="async" />
-            <h3>Rehabilitation Gym</h3>
-            <p class="muted">Therapeutic exercise and recovery training space used by the rehab center.</p>
-          </article>
-          <article class="card gallery-card">
-            <img src="images/therapy-equipment.jpg" alt="Therapy equipment area" loading="lazy" decoding="async" />
-            <h3>Therapy Equipment</h3>
-            <p class="muted">Modern rehabilitation equipment supporting mobility and recovery programs.</p>
-          </article>
-          <article class="card gallery-card">
-            <img src="images/training-area.jpg" alt="Training and mobility area" loading="lazy" decoding="async" />
-            <h3>Mobility &amp; Training Area</h3>
-            <p class="muted">Open training space used for functional therapy and performance work.</p>
-          </article>
-          <article class="card gallery-card">
-            <img src="images/massage-room.png" alt="Massage therapy treatment room" loading="lazy" decoding="async" />
-            <h3>Massage Therapy Room</h3>
-            <p class="muted">Dedicated treatment room where Cure Therapeutics massage sessions will be provided.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Helpful information for new clients and referral partners.</p>
-        <div class="grid">
-          <article class="card">
-            <h3>Do I need an appointment?</h3>
-            <p class="muted">Yes. Services are provided by appointment so that each client receives dedicated time and personalized care.</p>
-          </article>
-          <article class="card">
-            <h3>Where is the clinic located?</h3>
-            <p class="muted">Cure Therapeutics operates inside Texas Star Rehab &amp; Performance at 3365 Regent Blvd, Suite 130, Irving, Texas.</p>
-          </article>
-          <article class="card">
-            <h3>Do you offer prenatal and postnatal massage?</h3>
-            <p class="muted">Yes. These services are planned as part of the clinic’s therapeutic massage offerings, subject to client suitability and professional assessment.</p>
-          </article>
-          <article class="card">
-            <h3>Can massage support rehabilitation goals?</h3>
-            <p class="muted">Massage therapy may complement rehabilitation and wellness plans by helping reduce muscle tension, support mobility, and improve relaxation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <h2>Contact Us</h2>
-          <p class="muted">Cure Therapeutics operates inside Texas Star Rehab &amp; Performance</p>
-          <p><strong>Phone:</strong> (469) 447-5793</p>
-          <p><strong>Email:</strong> info@curetherapeutics.com</p>
-          <p><strong>Location:</strong> 3365 Regent Blvd, Suite 130, Irving, Texas 75063</p>
-          <p><a class="btn" href="https://www.google.com/maps/place/Texas+Star+Rehab+and+Performance+Center/@32.9209283,-97.0100552,15z/data=!3m1!4b1!4m6!3m5!1s0x864c29752dd65be9:0xfbbc537c7ad824b3!8m2!3d32.9209116!4d-96.9916011!16s%2Fg%2F11qm0lr_62" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></p>
-          <div style="margin-top:20px;border-radius:12px;overflow:hidden;">
-            <iframe
-              src="https://www.google.com/maps?q=Texas+Star+Rehab+and+Performance+Center,+3365+Regent+Blvd+Suite+130,+Irving,+TX+75063&output=embed"
-              width="100%"
-              height="300"
-              style="border:0;"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Map to Texas Star Rehab and Performance Center">
-            </iframe>
-          </div>
-          <p><strong>Hours:</strong> By appointment</p>
-          <p><strong>Website Launch:</strong> Soft launch for clinic establishment and business development</p>
-          <p><a class="btn" href="mailto:info@curetherapeutics.com">Email Us</a></p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 Cure Therapeutics Clinic LLC<br />
-      Cure Therapeutics is a therapeutic massage practice.
+<!-- ── STATS ──────────────────────────────────────────────── -->
+<div class="stats-row">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><span class="stat-num">6+</span><span class="stat-label">Therapeutic Services</span></div>
+      <div class="stat-item reveal reveal-delay-1"><span class="stat-num">1:1</span><span class="stat-label">Personalized Care</span></div>
+      <div class="stat-item reveal reveal-delay-2"><span class="stat-num">LMT</span><span class="stat-label">Licensed Therapist</span></div>
+      <div class="stat-item reveal reveal-delay-3"><span class="stat-num">TX</span><span class="stat-label">Irving, Texas</span></div>
     </div>
-  </footer>
+  </div>
+</div>
+
+<!-- ── SERVICES ───────────────────────────────────────────── -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <span class="section-label reveal">What We Offer</span>
+        <h2 class="section-title reveal reveal-delay-1">Therapeutic Services<br>Built Around You</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+      </div>
+      <p class="section-body reveal reveal-delay-2">Every treatment is tailored to your needs — whether recovering from injury, managing chronic tension, or seeking deep relaxation.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon">🌿</div><h3 class="service-name">Relaxation Massage</h3><p class="service-desc">Gentle, soothing treatment to reduce stress, improve circulation, and support overall wellness.</p></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-icon">💆</div><h3 class="service-name">Therapeutic Massage</h3><p class="service-desc">Focused work to relieve muscle tension, support mobility, and assist recovery from daily strain.</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon">🪨</div><h3 class="service-name">Hot Stone Therapy</h3><p class="service-desc">Warm stones combined with massage to encourage deep relaxation and release built-up tension.</p></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-icon">🫧</div><h3 class="service-name">Vacuum Cupping Therapy</h3><p class="service-desc">Modern cupping using suction to improve circulation, release tension, and support recovery.</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon">🤰</div><h3 class="service-name">Pre-Natal Massage</h3><p class="service-desc">Specialized massage for expectant mothers to reduce pregnancy-related discomfort and support relaxation.</p></div>
+      <div class="service-card reveal reveal-delay-3"><div class="service-icon">🌸</div><h3 class="service-name">Post-Natal Massage</h3><p class="service-desc">Therapeutic massage supporting post-partum recovery and restoration of body balance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ───────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img class="about-img-main" src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="Calming massage environment" loading="lazy" />
+        <img class="about-img-accent" src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=400&q=80" alt="Massage therapy detail" loading="lazy" />
+        <div class="about-badge"><span class="ab-num">TX</span><span class="ab-text">Irving</span></div>
+      </div>
+      <div>
+        <span class="section-label reveal">About the Practice</span>
+        <h2 class="section-title reveal reveal-delay-1">A Collaborative<br>Wellness Environment</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <p class="section-body reveal reveal-delay-2">Cure Therapeutics is a therapeutic massage practice in Irving, Texas, operating within Texas Star Rehab &amp; Performance Center. Our focus is professional massage therapy, complementary wellness treatments, and recovery-focused care in a clinical setting.</p>
+        <br>
+        <p class="section-body reveal reveal-delay-3" style="margin-top:0;">Founded by a licensed massage therapist with international experience, the practice is designed to grow alongside rehabilitation professionals to deliver high-quality, coordinated therapeutic services.</p>
+        <div class="about-pills reveal reveal-delay-3">
+          <span class="pill">Licensed Therapist</span>
+          <span class="pill">Recovery-Focused</span>
+          <span class="pill">Clinical Setting</span>
+          <span class="pill">Irving, TX</span>
+          <span class="pill">International Experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ─────────────────────────────────────────────── -->
+<section id="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="section-label reveal">Transparent Pricing</span>
+      <h2 class="section-title reveal reveal-delay-1">Services &amp; Rates</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+      <p class="section-body reveal reveal-delay-2">Clear, upfront pricing with no hidden fees. Each session is tailored to your individual treatment goals.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal"><h3 class="price-name">Therapeutic Massage</h3><p class="price-duration">60 Minutes</p><div class="price-amount"><sup>$</sup>95</div><p class="price-from">Starting at</p><p class="price-desc">Focused session for muscle recovery, stress relief, and mobility improvement.</p></div>
+      <div class="price-card featured reveal reveal-delay-1"><div class="featured-tag">Most Popular</div><h3 class="price-name">Therapeutic Massage</h3><p class="price-duration">90 Minutes</p><div class="price-amount"><sup>$</sup>135</div><p class="price-from">Starting at</p><p class="price-desc">Extended session for comprehensive therapeutic work and full-body relaxation.</p></div>
+      <div class="price-card reveal reveal-delay-2"><h3 class="price-name">Hot Stone Therapy</h3><p class="price-duration">Full Session</p><div class="price-amount"><sup>$</sup>120</div><p class="price-from">Starting at</p><p class="price-desc">Massage with heat therapy to reduce tension and promote deep relaxation.</p></div>
+      <div class="price-card reveal"><h3 class="price-name">Vacuum Cupping</h3><p class="price-duration">Targeted Session</p><div class="price-amount"><sup>$</sup>110</div><p class="price-from">Starting at</p><p class="price-desc">Improve circulation, reduce tightness, and support therapeutic recovery.</p></div>
+      <div class="price-card reveal reveal-delay-1"><h3 class="price-name">Pre-Natal Massage</h3><p class="price-duration">Specialty Session</p><div class="price-amount"><sup>$</sup>105</div><p class="price-from">Starting at</p><p class="price-desc">Comfort-focused care for pregnancy-related tension and relaxation.</p></div>
+      <div class="price-card reveal reveal-delay-2"><h3 class="price-name">Post-Natal Massage</h3><p class="price-duration">Recovery Session</p><div class="price-amount"><sup>$</sup>105</div><p class="price-from">Starting at</p><p class="price-desc">Post-partum recovery, muscular relief, and restoration of body balance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TEAM ────────────────────────────────────────────────── -->
+<section id="team">
+  <div class="container">
+    <span class="section-label reveal">Our People</span>
+    <h2 class="section-title reveal reveal-delay-1">Meet the Team</h2>
+    <div class="divider reveal reveal-delay-2"></div>
+
+    <!-- Profile card: full portrait + bio -->
+    <div class="team-profile reveal">
+      <div class="team-photo-wrap">
+        <img src="https://krishnajjadav-code.github.io/curetherapeutics/images/krishnakumari-jadav-therapist.jpg"
+             alt="Krishnakumari Jadav – Founder & Lead LMT" loading="lazy" />
+      </div>
+      <div class="team-profile-body">
+        <p class="team-role">Founder &amp; Lead Therapist</p>
+        <h3 class="team-name">Krishnakumari Jadav</h3>
+        <div class="divider" style="margin:12px 0 0;"></div>
+        <p class="team-bio">Krishnakumari founded Cure Therapeutics with a vision of providing therapeutic massage focused on recovery, muscle relief, and patient-centered wellness. With international experience, she oversees treatment standards and is building a collaborative team at Texas Star Rehab &amp; Performance Center.</p>
+        <div class="team-specs">
+          <div class="spec-item"><span class="spec-dot"></span>Therapeutic Massage</div>
+          <div class="spec-item"><span class="spec-dot"></span>Prenatal &amp; Postnatal Massage</div>
+          <div class="spec-item"><span class="spec-dot"></span>Vacuum Cupping Therapy</div>
+          <div class="spec-item"><span class="spec-dot"></span>Recovery-Focused Treatments</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom row: Join + Collab -->
+    <div class="team-cards-row">
+      <div class="join-card reveal reveal-delay-1">
+        <div class="join-card-header">
+          <div class="join-card-thumb">
+            <img src="images/join-team.png" alt="Join Our Team" />
+          </div>
+          <div>
+            <span class="section-label">We're Hiring</span>
+            <p class="join-title">Join Our Team</p>
+          </div>
+        </div>
+        <p>Cure Therapeutics is expanding and seeking licensed massage therapists to support growing patient demand in Irving, Texas.</p>
+        <a href="mailto:info@curetherapeutics.com" class="btn btn-lime-outline" style="align-self:flex-start;">Inquire About Roles</a>
+      </div>
+      <div class="collab-card reveal reveal-delay-2">
+        <span class="section-label">Clinical Collaboration</span>
+        <h4>Integrated Wellness</h4>
+        <p>Operating within Texas Star Rehab &amp; Performance Center allows clients to access complementary services alongside physiotherapy and rehabilitation programs — a truly integrated wellness experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONDITIONS ─────────────────────────────────────────── -->
+<section id="conditions">
+  <div class="container">
+    <div class="conditions-layout">
+      <div>
+        <span class="section-label reveal">Who We Help</span>
+        <h2 class="section-title reveal reveal-delay-1">Conditions We<br>Commonly Support</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <p class="section-body reveal reveal-delay-2" style="font-size:13.5px;">Services are tailored to the individual and are not a substitute for medical diagnosis or emergency care.</p>
+      </div>
+      <div class="conditions-grid">
+        <div class="condition-card reveal"><div class="condition-num">01</div><h4 class="condition-name">Stress &amp; Tension</h4><p class="condition-desc">Support for daily stress, muscle tightness, neck and shoulder tension, and relaxation needs.</p></div>
+        <div class="condition-card reveal reveal-delay-1"><div class="condition-num">02</div><h4 class="condition-name">Postural Discomfort</h4><p class="condition-desc">Care for stiffness from desk work, repetitive movement, and everyday body strain.</p></div>
+        <div class="condition-card reveal reveal-delay-2"><div class="condition-num">03</div><h4 class="condition-name">Sports &amp; Recovery</h4><p class="condition-desc">Therapeutic support for muscle recovery, mobility improvement, and performance maintenance.</p></div>
+        <div class="condition-card reveal reveal-delay-3"><div class="condition-num">04</div><h4 class="condition-name">Prenatal &amp; Postnatal</h4><p class="condition-desc">Comfort-focused care for pregnancy-related tension and post-partum recovery needs.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ─────────────────────────────────────────────── -->
+<section id="clinic">
+  <div class="container">
+    <div class="clinic-header">
+      <span class="section-label reveal">Inside the Clinic</span>
+      <h2 class="section-title reveal reveal-delay-1">Texas Star Rehab &amp; Performance Center</h2>
+      <div class="divider reveal"></div>
+      <p class="section-body reveal" style="margin:0 auto;">The professional facility where Cure Therapeutics operates.</p>
+    </div>
+    <div class="clinic-gallery">
+      <div class="gallery-item tall reveal"><img src="https://krishnajjadav-code.github.io/curetherapeutics/images/massage-room.png" alt="Massage Therapy Room" loading="lazy" /></div>
+      <div class="gallery-item reveal reveal-delay-1"><img src="https://krishnajjadav-code.github.io/curetherapeutics/images/clinic-reception.JPG" alt="Reception Area" loading="lazy" /></div>
+      <div class="gallery-item reveal reveal-delay-2"><img src="https://krishnajjadav-code.github.io/curetherapeutics/images/rehab-gym.JPG" alt="Rehabilitation Gym" loading="lazy" /></div>
+      <div class="gallery-item reveal reveal-delay-1"><img src="https://krishnajjadav-code.github.io/curetherapeutics/images/therapy-equipment.jpg" alt="Therapy Equipment" loading="lazy" /></div>
+      <div class="gallery-item reveal reveal-delay-2"><img src="https://krishnajjadav-code.github.io/curetherapeutics/images/training-area.jpg" alt="Mobility &amp; Training Area" loading="lazy" /></div>
+    </div>
+    <p class="gallery-caption reveal">3365 Regent Blvd, Suite 130 · Irving, Texas 75063</p>
+  </div>
+</section>
+
+<!-- ── FAQ ─────────────────────────────────────────────────── -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <span class="section-label reveal">Common Questions</span>
+        <h2 class="section-title reveal reveal-delay-1">Frequently<br>Asked Questions</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <p class="section-body reveal reveal-delay-2">Can't find your answer? Reach out directly and we'll be happy to help.</p>
+        <a href="mailto:info@curetherapeutics.com" class="btn btn-outline reveal reveal-delay-3" style="margin-top:28px;">Email Us</a>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal"><div class="faq-q"><span>Do I need an appointment?</span><span class="faq-icon">+</span></div><div class="faq-a">Yes. Services are by appointment only so each client receives dedicated time and personalized care. Use the booking options below to schedule.</div></div>
+        <div class="faq-item reveal reveal-delay-1"><div class="faq-q"><span>Where is the clinic located?</span><span class="faq-icon">+</span></div><div class="faq-a">Cure Therapeutics operates inside Texas Star Rehab &amp; Performance at 3365 Regent Blvd, Suite 130, Irving, Texas 75063. Ample parking is available on site.</div></div>
+        <div class="faq-item reveal reveal-delay-2"><div class="faq-q"><span>Do you offer prenatal and postnatal massage?</span><span class="faq-icon">+</span></div><div class="faq-a">Yes. These are part of our therapeutic offerings, subject to client suitability and professional assessment. Please mention any health considerations when booking.</div></div>
+        <div class="faq-item reveal reveal-delay-3"><div class="faq-q"><span>Can massage support rehabilitation goals?</span><span class="faq-icon">+</span></div><div class="faq-a">Massage therapy may complement rehabilitation by reducing muscle tension, supporting mobility, and improving relaxation alongside the Texas Star rehab team.</div></div>
+        <div class="faq-item reveal"><div class="faq-q"><span>Do you accept insurance?</span><span class="faq-icon">+</span></div><div class="faq-a">Where applicable, we provide treatment documentation and receipts that may support reimbursement through wellness plans. Contact us for details specific to your plan.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKING ─────────────────────────────────────────────── -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-inner">
+      <div class="booking-text">
+        <span class="section-label reveal">Ready to Begin?</span>
+        <h2 class="section-title reveal reveal-delay-1">Book Your<br>Session Today</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <p class="section-body reveal reveal-delay-2">Online scheduling and phone-based booking are available to make your appointment as easy as possible. We look forward to supporting your wellness journey.</p>
+      </div>
+      <div class="booking-card reveal reveal-delay-2">
+        <!-- Direct contact options -->
+        <div class="booking-option"><div class="booking-option-icon">📞</div><div><p class="booking-option-label">Call or Text</p><p class="booking-option-value"><a href="tel:+14694475793">(469) 447-5793</a></p></div></div>
+        <div class="booking-option" style="border-bottom:none;padding-bottom:0;margin-bottom:20px;"><div class="booking-option-icon">✉️</div><div><p class="booking-option-label">Email</p><p class="booking-option-value"><a href="mailto:info@curetherapeutics.com">info@curetherapeutics.com</a></p></div></div>
+        <!-- ── BOOKING INQUIRY FORM ─────────────────────────── -->
+        <!-- Powered by Formspree (free). Steps to activate:   -->
+        <!-- 1. Go to https://formspree.io/register             -->
+        <!-- 2. Create a new form → copy your form ID           -->
+        <!-- 3. Replace "YOUR_FORM_ID" below with your ID       -->
+        <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div>
+              <label style="display:block;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime-light);margin-bottom:7px;">First Name</label>
+              <input type="text" name="first_name" required placeholder="Jane"
+                style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(141,200,87,.25);border-radius:4px;padding:11px 14px;color:#fff;font-family:'Jost',sans-serif;font-size:14px;outline:none;transition:border-color .2s;"
+                onfocus="this.style.borderColor='rgba(141,200,87,.65)'" onblur="this.style.borderColor='rgba(141,200,87,.25)'" />
+            </div>
+            <div>
+              <label style="display:block;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime-light);margin-bottom:7px;">Last Name</label>
+              <input type="text" name="last_name" required placeholder="Doe"
+                style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(141,200,87,.25);border-radius:4px;padding:11px 14px;color:#fff;font-family:'Jost',sans-serif;font-size:14px;outline:none;transition:border-color .2s;"
+                onfocus="this.style.borderColor='rgba(141,200,87,.65)'" onblur="this.style.borderColor='rgba(141,200,87,.25)'" />
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime-light);margin-bottom:7px;">Phone Number</label>
+            <input type="tel" name="phone" required placeholder="(469) 000-0000"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(141,200,87,.25);border-radius:4px;padding:11px 14px;color:#fff;font-family:'Jost',sans-serif;font-size:14px;outline:none;transition:border-color .2s;"
+              onfocus="this.style.borderColor='rgba(141,200,87,.65)'" onblur="this.style.borderColor='rgba(141,200,87,.25)'" />
+          </div>
+          <div>
+            <label style="display:block;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime-light);margin-bottom:7px;">Service</label>
+            <select name="service" required
+              style="width:100%;background:rgba(18,61,45,.9);border:1px solid rgba(141,200,87,.25);border-radius:4px;padding:11px 14px;color:#fff;font-family:'Jost',sans-serif;font-size:14px;outline:none;cursor:pointer;transition:border-color .2s;"
+              onfocus="this.style.borderColor='rgba(141,200,87,.65)'" onblur="this.style.borderColor='rgba(141,200,87,.25)'">
+              <option value="" disabled selected>Select a service…</option>
+              <option>Therapeutic Massage – 60 min ($95)</option>
+              <option>Therapeutic Massage – 90 min ($135)</option>
+              <option>Hot Stone Therapy ($120)</option>
+              <option>Vacuum Cupping Therapy ($110)</option>
+              <option>Pre-Natal Massage ($105)</option>
+              <option>Post-Natal Massage ($105)</option>
+              <option>Not sure — please advise</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime-light);margin-bottom:7px;">Preferred Day &amp; Time</label>
+            <input type="text" name="preferred_time" placeholder="e.g. Weekday mornings, Saturday afternoons…"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(141,200,87,.25);border-radius:4px;padding:11px 14px;color:#fff;font-family:'Jost',sans-serif;font-size:14px;outline:none;transition:border-color .2s;"
+              onfocus="this.style.borderColor='rgba(141,200,87,.65)'" onblur="this.style.borderColor='rgba(141,200,87,.25)'" />
+          </div>
+          <div>
+            <label style="display:block;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime-light);margin-bottom:7px;">Message (optional)</label>
+            <textarea name="message" rows="3" placeholder="Any health notes, questions, or special requests…"
+              style="width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(141,200,87,.25);border-radius:4px;padding:11px 14px;color:#fff;font-family:'Jost',sans-serif;font-size:14px;outline:none;resize:vertical;transition:border-color .2s;"
+              onfocus="this.style.borderColor='rgba(141,200,87,.65)'" onblur="this.style.borderColor='rgba(141,200,87,.25)'"></textarea>
+          </div>
+          <!-- Honeypot spam protection -->
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_subject" value="New Booking Inquiry — Cure Therapeutics" />
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:4px;" id="submitBtn">
+            Send Booking Request
+          </button>
+          <p id="formSuccess" style="display:none;text-align:center;color:var(--lime);font-size:13px;font-weight:500;padding:12px;background:rgba(141,200,87,.1);border-radius:4px;border:1px solid rgba(141,200,87,.25);">
+            ✓ Request sent! We'll be in touch within 24 hours.
+          </p>
+          <p id="formError" style="display:none;text-align:center;color:#f98989;font-size:13px;font-weight:500;padding:12px;background:rgba(249,137,137,.1);border-radius:4px;">
+            Something went wrong. Please call or email us directly.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ─────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="section-label reveal">Find Us</span>
+        <h2 class="section-title reveal reveal-delay-1">Contact &amp;<br>Location</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <div class="contact-info">
+          <div class="contact-item reveal reveal-delay-2"><div class="contact-icon">📍</div><div><p class="contact-label">Address</p><p class="contact-val">3365 Regent Blvd, Suite 130<br>Irving, Texas 75063<br><a href="https://www.google.com/maps/place/Texas+Star+Rehab+and+Performance+Center" target="_blank" rel="noopener">Open in Google Maps →</a></p></div></div>
+          <div class="contact-item reveal reveal-delay-3"><div class="contact-icon">📞</div><div><p class="contact-label">Phone</p><p class="contact-val"><a href="tel:+14694475793">(469) 447-5793</a></p></div></div>
+          <div class="contact-item reveal reveal-delay-3"><div class="contact-icon">✉️</div><div><p class="contact-label">Email</p><p class="contact-val"><a href="mailto:info@curetherapeutics.com">info@curetherapeutics.com</a></p></div></div>
+          <div class="contact-item reveal"><div class="contact-icon">🕐</div><div><p class="contact-label">Hours</p><p class="contact-val">By Appointment</p></div></div>
+        </div>
+      </div>
+      <div class="contact-map reveal reveal-delay-2">
+        <iframe title="Cure Therapeutics Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.6734!2d-96.9941!3d32.9209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c29752dd65be9%3A0xfbbc537c7ad824b3!2sTexas%20Star%20Rehab%20and%20Performance%20Center!5e0!3m2!1sen!2sus!4v1" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="./cure.svg" alt="Cure Therapeutics" />
+      <div class="footer-brand-text">
+        Cure Therapeutics
+        <small>Massage &amp; Recovery · Irving, TX</small>
+      </div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Cure Therapeutics Clinic LLC</p>
+  </div>
+</footer>
+
+<script>
+  // NAV scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+
+  // Mobile menu
+  const hamburger    = document.getElementById('hamburger');
+  const mobileMenu   = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const mobileClose  = document.getElementById('mobileClose');
+  const openMenu  = () => { mobileMenu.classList.add('open'); mobileOverlay.classList.add('open'); };
+  const closeMenu = () => { mobileMenu.classList.remove('open'); mobileOverlay.classList.remove('open'); };
+  hamburger.addEventListener('click', openMenu);
+  mobileClose.addEventListener('click', closeMenu);
+  mobileOverlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const was  = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!was) item.classList.add('open');
+    });
+  });
+
+  // ── BOOKING FORM via Formspree AJAX ──────────────────────
+  // To activate: sign up at formspree.io, create a form,
+  // then replace YOUR_FORM_ID in the <form action="..."> above.
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn     = document.getElementById('submitBtn');
+      const success = document.getElementById('formSuccess');
+      const error   = document.getElementById('formError');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      success.style.display = 'none';
+      error.style.display   = 'none';
+      try {
+        const res = await fetch(bookingForm.action, {
+          method: 'POST',
+          body: new FormData(bookingForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          success.style.display = 'block';
+          bookingForm.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        error.style.display = 'block';
+      }
+      btn.textContent = 'Send Booking Request';
+      btn.disabled = false;
+    });
+  }
+</script>
 </body>
 </html>
